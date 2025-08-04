@@ -22,8 +22,8 @@
         ]
     },
     "uppercase_words": {
-        "0": 4567,
-        "1": 854,
+        "antisemitic": 854,
+        "non_antisemitic": 4567,
         "total": 5421
     },
     "common_words": {

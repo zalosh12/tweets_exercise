@@ -66,11 +66,10 @@ class DataAnalyzer:
         return top_10_common
 
     def get_upper_words(self):
-        ""
         self.df['upper_words'] = self.df['Text'].apply(
             lambda x: sum([1 if w.isalpha() and w.isupper() else 0 for w in str(x).split()])
         )
-        upper_words_counter = self.df.groupby('Biased')['upper_words'].sum().to_dict()
+        upper_words_counter = self.df.groupby('category')['upper_words'].sum().to_dict()
         upper_words_counter['total'] = self.df['upper_words'].sum()
         self.result["uppercase_words"] = upper_words_counter
         return upper_words_counter

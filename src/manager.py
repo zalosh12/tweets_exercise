@@ -30,7 +30,7 @@ class Manager:
             #get cleaned data
             clean_data = cleaner.get_clean_dat()
 
-            #write clened dat to csv file
+            #write cleaned data to csv file
             clean_data.to_csv("../results/tweets_dataset_cleaned.csv")
 
 
