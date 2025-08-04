@@ -66,6 +66,7 @@ class DataAnalyzer:
         return top_10_common
 
     def get_upper_words(self):
+        ""
         self.df['upper_words'] = self.df['Text'].apply(
             lambda x: sum([1 if w.isalpha() and w.isupper() else 0 for w in str(x).split()])
         )

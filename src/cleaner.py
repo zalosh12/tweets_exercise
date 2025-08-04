@@ -2,6 +2,7 @@ import re, string
 
 
 class Cleaner:
+    """A class to clean the tweets DataFrame"""
     def __init__(self,df):
         self.df = df
 
