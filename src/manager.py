@@ -27,8 +27,10 @@ class Manager:
 
             cleaner = Cleaner(data)
 
+            #get cleaned data
             clean_data = cleaner.get_clean_dat()
 
+            #write clened dat to csv file
             clean_data.to_csv("../results/cleaned_data.csv")
 
 
