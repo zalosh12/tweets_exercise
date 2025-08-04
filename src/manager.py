@@ -3,20 +3,33 @@ from data_analyzer import DataAnalyzer
 from json_writer import JsonWriter
 from cleaner import Cleaner
 
-def run():
-    data = pd.read_csv("../data/tweets_dataset.csv")
+class Manager:
+    def __init__(self,file_src):
+        self.file_src = file_src
 
-    analyzer = DataAnalyzer(data)
+    def run(self):
 
-    results = analyzer.result
+            #load data from a file
+            data = pd.read_csv(self.file_src)
 
-    converted_results = JsonWriter.convert_to_native(results)
+            #analyze the data
+            analyzer = DataAnalyzer(data)
 
-    JsonWriter.write_to_json(converted_results)
+            #the results of analyzing
+            results = analyzer.result
 
-    cleaner = Cleaner(data)
+            #convert results to basic python data types
+            converted_results = JsonWriter.convert_to_native(results)
 
-    cleaner.df.to_csv("../results/cleaned_data.csv")
+            #write results to json file
+            JsonWriter.write_to_json(converted_results)
+
+
+            cleaner = Cleaner(data)
+
+            clean_data = cleaner.get_clean_dat()
+
+            clean_data.to_csv("../results/cleaned_data.csv")
 
 
 

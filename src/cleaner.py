@@ -23,5 +23,5 @@ class Cleaner:
         self.df['Text'] = self.df['Text'].str.lower()
 
     def drop_unclassified_tweets(self):
-        self.df = self.df.dropna(subset="Biased",inplace=True)
+        self.df.dropna(subset="Biased",inplace=True)
 

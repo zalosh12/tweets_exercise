@@ -1,6 +1,9 @@
-from manager import run
+from manager import Manager
 
 def main():
-    run()
+    manager = Manager(r"C:\Users\eliwa\PycharmProjects\tweets_project\data\tweets_dataset.csv")
+    manager.run()
 
-main()
+if __name__  == "__main__":
+    main()
+
