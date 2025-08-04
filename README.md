@@ -26,7 +26,7 @@ second: clean the data and save the cleaned data in csv file
 │   ├── cleaner.py        
 │   └── data_analayzer.py
 └── results/          
-   ├── cleaned_data.csv       
+   ├── tweets_dataset_cleaned.csv       
    └── results.json
 
 ```
